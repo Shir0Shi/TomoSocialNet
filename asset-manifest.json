@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/TomoSocialNet/static/css/main.3354e489.css",
-    "main.js": "/TomoSocialNet/static/js/main.0efa02a3.js",
+    "main.css": "/TomoSocialNet/static/css/main.a0e0dd3e.css",
+    "main.js": "/TomoSocialNet/static/js/main.6623fbbf.js",
     "static/css/262.339d2b5e.chunk.css": "/TomoSocialNet/static/css/262.339d2b5e.chunk.css",
     "static/js/262.ef0a4dae.chunk.js": "/TomoSocialNet/static/js/262.ef0a4dae.chunk.js",
-    "static/js/966.3f634cbe.chunk.js": "/TomoSocialNet/static/js/966.3f634cbe.chunk.js",
-    "static/js/787.b701888c.chunk.js": "/TomoSocialNet/static/js/787.b701888c.chunk.js",
+    "static/js/966.202f9df5.chunk.js": "/TomoSocialNet/static/js/966.202f9df5.chunk.js",
+    "static/js/496.a57ac6dd.chunk.js": "/TomoSocialNet/static/js/496.a57ac6dd.chunk.js",
     "static/media/settingPlug.png": "/TomoSocialNet/static/media/settingPlug.ce610117bf81f83c0339.png",
     "static/media/Camera.ico": "/TomoSocialNet/static/media/Camera.b72483a17ff8e9f71d88.ico",
     "static/media/Tomo-2.png": "/TomoSocialNet/static/media/Tomo-2.19dcfc1a7275459278c7.png",
     "static/media/813.gif": "/TomoSocialNet/static/media/813.2351913a7a88bbfe2214.gif",
     "index.html": "/TomoSocialNet/index.html",
-    "main.3354e489.css.map": "/TomoSocialNet/static/css/main.3354e489.css.map",
-    "main.0efa02a3.js.map": "/TomoSocialNet/static/js/main.0efa02a3.js.map",
+    "main.a0e0dd3e.css.map": "/TomoSocialNet/static/css/main.a0e0dd3e.css.map",
+    "main.6623fbbf.js.map": "/TomoSocialNet/static/js/main.6623fbbf.js.map",
     "262.339d2b5e.chunk.css.map": "/TomoSocialNet/static/css/262.339d2b5e.chunk.css.map",
     "262.ef0a4dae.chunk.js.map": "/TomoSocialNet/static/js/262.ef0a4dae.chunk.js.map",
-    "966.3f634cbe.chunk.js.map": "/TomoSocialNet/static/js/966.3f634cbe.chunk.js.map",
-    "787.b701888c.chunk.js.map": "/TomoSocialNet/static/js/787.b701888c.chunk.js.map"
+    "966.202f9df5.chunk.js.map": "/TomoSocialNet/static/js/966.202f9df5.chunk.js.map",
+    "496.a57ac6dd.chunk.js.map": "/TomoSocialNet/static/js/496.a57ac6dd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3354e489.css",
-    "static/js/main.0efa02a3.js"
+    "static/css/main.a0e0dd3e.css",
+    "static/js/main.6623fbbf.js"
   ]
 }
