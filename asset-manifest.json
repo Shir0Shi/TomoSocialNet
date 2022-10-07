@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/TomoSocialNet/static/css/main.7c9a9b94.css",
-    "main.js": "/TomoSocialNet/static/js/main.5c181e62.js",
-    "static/css/360.207bd7c0.chunk.css": "/TomoSocialNet/static/css/360.207bd7c0.chunk.css",
-    "static/js/360.1a689b68.chunk.js": "/TomoSocialNet/static/js/360.1a689b68.chunk.js",
+    "main.js": "/TomoSocialNet/static/js/main.86d61d1a.js",
+    "static/css/408.be265a00.chunk.css": "/TomoSocialNet/static/css/408.be265a00.chunk.css",
+    "static/js/408.c500b79e.chunk.js": "/TomoSocialNet/static/js/408.c500b79e.chunk.js",
     "static/js/269.98a6ff70.chunk.js": "/TomoSocialNet/static/js/269.98a6ff70.chunk.js",
     "static/js/496.a57ac6dd.chunk.js": "/TomoSocialNet/static/js/496.a57ac6dd.chunk.js",
     "static/media/newsPlug.png": "/TomoSocialNet/static/media/newsPlug.41b0b7570ac2dad67844.png",
@@ -11,14 +11,14 @@
     "static/media/813.gif": "/TomoSocialNet/static/media/813.2351913a7a88bbfe2214.gif",
     "index.html": "/TomoSocialNet/index.html",
     "main.7c9a9b94.css.map": "/TomoSocialNet/static/css/main.7c9a9b94.css.map",
-    "main.5c181e62.js.map": "/TomoSocialNet/static/js/main.5c181e62.js.map",
-    "360.207bd7c0.chunk.css.map": "/TomoSocialNet/static/css/360.207bd7c0.chunk.css.map",
-    "360.1a689b68.chunk.js.map": "/TomoSocialNet/static/js/360.1a689b68.chunk.js.map",
+    "main.86d61d1a.js.map": "/TomoSocialNet/static/js/main.86d61d1a.js.map",
+    "408.be265a00.chunk.css.map": "/TomoSocialNet/static/css/408.be265a00.chunk.css.map",
+    "408.c500b79e.chunk.js.map": "/TomoSocialNet/static/js/408.c500b79e.chunk.js.map",
     "269.98a6ff70.chunk.js.map": "/TomoSocialNet/static/js/269.98a6ff70.chunk.js.map",
     "496.a57ac6dd.chunk.js.map": "/TomoSocialNet/static/js/496.a57ac6dd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7c9a9b94.css",
-    "static/js/main.5c181e62.js"
+    "static/js/main.86d61d1a.js"
   ]
 }
