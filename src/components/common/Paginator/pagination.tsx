@@ -9,7 +9,7 @@ type Props = {
     onPageChanged: (pageNumber: number)=>void, 
     portionSize?:number
 }
-let Pagination: React.FC<Props> = ({totalItemsCount, pageSize, currentPage, onPageChanged, portionSize = 10})=>{
+export const Pagination: React.FC<Props> = ({totalItemsCount, pageSize, currentPage, onPageChanged, portionSize = 10})=>{
     
     let pageCount = Math.ceil(totalItemsCount/pageSize);
     let pages = [];
@@ -41,4 +41,3 @@ let Pagination: React.FC<Props> = ({totalItemsCount, pageSize, currentPage, onPa
       </div>      
 );
 }
-export default Pagination;

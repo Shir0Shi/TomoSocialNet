@@ -11,15 +11,21 @@ import {connect} from 'react-redux';
 import {compose} from "redux";
 import { initializeApp } from './redux/appReducer';
 import Preloader from './components/common/preloader/preloader';
-import store from './redux/reduxStore';
+import store, { AppStateType } from './redux/reduxStore';
 import { Provider } from 'react-redux';
 import { HashRouter } from 'react-router-dom';
 import SettingsContainer from './components/Settings/SettingsContainer';
 const DialogsContainer = React.lazy(()=>import('./components/Dialogs/DialogsContainer'));
 const ProfileContainer = React.lazy(()=>import('./components/Profile/ProfileContainer'));
 const LoginContainer = React.lazy(()=>import('./components/Login/LoginContainer'));
-class App extends React.Component {
-  catchAllUnhandedErrors = (reason, promise) =>{
+
+type StatePropsType = ReturnType<typeof mapStateToProps>
+type DispatchPropsType = {
+  initializeApp: ()=> void 
+}
+
+class App extends React.Component<StatePropsType & DispatchPropsType> {
+  catchAllUnhandedErrors = (e: PromiseRejectionEvent) =>{
       console.log("Some error occurred");
       //console.log(promise);
       // dispatch to app-reducer and make global error to make popup
@@ -35,7 +41,7 @@ class App extends React.Component {
   render(){ 
     if(!this.props.initialized)
     {
-      return <Preloader/>
+      //return <Preloader/>
     }
     
     return(         
@@ -66,15 +72,15 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = (state)=>({
+const mapStateToProps = (state :AppStateType)=>({
   initialized: state.app.initialized
 })
 
-const AppContainer =  compose(
+const AppContainer =  compose<React.ComponentType>(
   withRouter,
   connect(mapStateToProps, {initializeApp}))(App);
 
-const MainApp = (props)=>{
+const MainApp: React.FC = ()=>{
   return <HashRouter>
   <Provider store={store}>
     <AppContainer />  

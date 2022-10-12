@@ -70,7 +70,7 @@ let mapStateToProps = (state: any)=>({
  isAuth: state.auth.isAuth
 });
 
-export default compose(
+export default compose<React.ComponentType>(
   connect(mapStateToProps, { setProfile, setStatus, updateStatus, saveProfile}),
   withRouter  
   // withAuthRedirect

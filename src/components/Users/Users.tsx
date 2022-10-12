@@ -1,8 +1,9 @@
 import React from "react";
 import style from "./Users.module.css"
-import Pagination from "../common/Paginator/pagination";
 import User from "./User";
 import { UserType } from "../../types/types";
+import { Pagination } from "../common/Paginator/pagination";
+
 
 type Props = {
         totalUsersCount: number, 
