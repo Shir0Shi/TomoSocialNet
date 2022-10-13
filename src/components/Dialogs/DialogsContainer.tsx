@@ -28,7 +28,7 @@ let mapDispatchToProps = (dispatch: Dispatch):MapDispatchDialogPropsType=>{
         }
     });
 }
-export default compose(
+export default compose<React.ComponentType>(
     connect<MapStatePropsType, MapDispatchDialogPropsType, {}, AppStateType>(mapStateToProps,mapDispatchToProps),
     withAuthRedirect
 )(Dialogs);

@@ -9,7 +9,7 @@ describe("Pagination component", () => {
       let li = root.findAllByType("li")
       expect(li.length).toBe(8);
     });
-    test("li count should be 9", () => {
+    test("li count should be 8", () => {
         const component = create(<Pagination totalItemsCount={9} pageSize={1} portionSize={10} currentPage = {2} onPageChanged={()=>{}} />);
         const root = component.root;
         let li = root.findAllByType("li")

@@ -41,7 +41,7 @@ let mapStateToProps = (state: AppStateType)=>{
         user: state.auth
     });
 }
-export default compose(
+export default compose<React.ComponentType>(
     connect(mapStateToProps,{savePhoto, setProfile}),
     withAuthRedirect
 )(SettingsContainer);
