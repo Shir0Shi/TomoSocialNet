@@ -18,7 +18,7 @@ return(<div>
     <div>{user.followed ? <button  disabled={followingInProgress.some(id=>id===user.id)} onClick={()=>{ unfollow(user.id)}}>Unfollow</button> :
      <button disabled={followingInProgress.some(id=>id===user.id)} onClick={()=>{follow(user.id)}}>Follow</button>}</div>
 </span>
-<span>
+<div>
     <span>
         <div>{user.name}</div>
         <div>{user.status}</div>
@@ -27,7 +27,7 @@ return(<div>
         <div>{"user.location.city"}</div>
         <div>{"user.location.country"}</div>
     </span>
-</span>
+</div>
 </div>)
 
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ChangeEvent } from "react";
 
 type Props = {
     status:string,
@@ -22,7 +22,7 @@ class ProfileStatus extends React.Component<Props>{
         });
         this.props.updateStatus(this.state.status);
     }
-    onStatusChange=(e:any)=>{
+    onStatusChange=(e:ChangeEvent<HTMLInputElement>)=>{
         this.setState({
             status: e.currentTarget.value
         });

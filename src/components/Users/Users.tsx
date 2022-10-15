@@ -2,7 +2,7 @@ import React from "react";
 import style from "./Users.module.css"
 import User from "./User";
 import { UserType } from "../../types/types";
-import { Pagination } from "../common/Paginator/pagination";
+import { Pagination } from "../common/Paginator/pagination2";
 
 
 type Props = {

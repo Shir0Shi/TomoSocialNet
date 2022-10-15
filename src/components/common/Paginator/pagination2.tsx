@@ -1,5 +1,5 @@
 import React, {useMemo, useState} from "react";
-import style from "./pagination.module.css";
+import style from "./pagination2.module.css";
 import { DOTS, usePagination } from "./usePagination";
 import classnames from "classnames";
 
@@ -41,32 +41,32 @@ export const Pagination: React.FC<PaginationProps> = ({
         onPageChanged(currentPage - 1);
       };
     
-      let lastPage = paginationRange[paginationRange.length - 1];      
+      let lastPage = paginationRange[paginationRange.length-1];      
     
      
     return(<ul
-        className={classnames('')}
+        className={classnames(style.pagination)}
       >
          {/* Left navigation arrow */}
+         { currentPage != 1 &&
         <li
-          className={classnames('', {
-            disabled: currentPage === 1
-          })}
+          className={classnames(style.leftArrow, style.pageItem)}
           onClick={onPrevious}
         >
-          <div className="" />
+          &#10094;
         </li>
+        }
         {paginationRange.map(pageNumber => {
            
           // If the pageItem is a DOT, render the DOTS unicode character
           if (pageNumber == DOTS) {
-            return <li className="">&#8230;</li>;
+            return <li className={style.pageItem}>&#8230;</li>;
           }
           
           // Render our Page Pills
           return (
             <li
-              className={classnames('', {[style.selectedPage] : currentPage === pageNumber ,
+              className={classnames(style.pageItem, {[style.selectedPage] : currentPage === pageNumber ,
                 [style.pageNumber] : style.pageNumber})}
               onClick={() => onPageChanged(+pageNumber)}
               key={pageNumber}
@@ -76,15 +76,15 @@ export const Pagination: React.FC<PaginationProps> = ({
           );
         })}
         {/*  Right Navigation arrow */}
+        { currentPage != lastPage &&
         <li
-          className={classnames('', {
-            disabled: currentPage === lastPage
-          })}
-          onClick={onNext}
-          
+          className={classnames(style.rightArrow, style.pageItem)}
+          onClick={onNext}       
         >
-          <div className="" />
+            	
+          &#10095;  
         </li>
+        }
       </ul>);
       } else return null;
 }

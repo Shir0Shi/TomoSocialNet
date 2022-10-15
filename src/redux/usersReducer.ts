@@ -1,6 +1,6 @@
-
 import { Dispatch } from "react";
 import { ThunkAction } from "redux-thunk";
+import { ResponseType } from "../api/api";
 import { usersAPI } from "../api/usersAPI";
 import { PhotosType, UserType } from "../types/types";
 import { objectSelectionChanges } from "../utils/helper";
@@ -80,8 +80,12 @@ export const requestUsers =(currentPage:number,pageSize:number): ThunkType => as
         dispatch(actions.setCurrentPage(currentPage));
 }
 
-const followUnfollowFlow = async(dispatch: DispatchType, userId:number, actionMethod:any,
-      actionCreator: (userId: number)=>ActionTypes)=>{
+const followUnfollowFlow = async(
+    dispatch: DispatchType, 
+    userId:number, 
+    actionMethod: (userId: number) => Promise<ResponseType>,
+    actionCreator: (userId: number) => ActionTypes
+    )=>{
     dispatch(actions.toggleFollowingProgress(true,userId));
         let result = await actionMethod(userId);
         if(result.resultCode === 0)

@@ -1,0 +1,35 @@
+
+.pagination li{
+    display: inline;
+}
+
+.pageItem{
+    border: none;
+    background: rgb(193, 223, 255);
+    border-radius: 20px;
+    margin: 2px;
+    padding: 1%;
+    text-align: center;
+    cursor: pointer;
+}
+/* .leftArrow{
+
+}
+.rightArrow{
+    
+} */
+
+.selectedPage{
+    font-weight: bold;
+    background: rgb(168, 203, 255);
+}
+.prevPageBtn:hover, .nextPageBtn:hover, .pageNumber:hover{
+    background: rgb(168, 203, 255);
+}
+@media only screen and (max-width: 768px){
+    ul{
+        text-align: center;
+        padding-inline-start: 0;
+        margin-left: -2%;
+    }
+}

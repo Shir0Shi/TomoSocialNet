@@ -4,6 +4,7 @@ import cameraPic from '../../assets/images/Camera.ico';
 import noPic from '../../assets/images/default.jpg';
 import Preloader from '../common/preloader/preloader';
 import { ProfileType } from '../../types/types';
+import { ChangeEvent } from 'react';
 
 type Props = {
     profile: ProfileType,
@@ -15,11 +16,11 @@ type Props = {
 }
 
 const Settings: React.FC<Props> = (props)=>{
-    let onUserPhotoChange = (e:any)=>{
-        if(e.target.files.length)
+    let onUserPhotoChange = (e: ChangeEvent<HTMLInputElement>)=>{        
+        if(e.target.files?.length)
         {
             props.savePhoto(e.target.files[0]);
-        }
+        }                   
     }
     if(!props.profile)
     return <Preloader/>

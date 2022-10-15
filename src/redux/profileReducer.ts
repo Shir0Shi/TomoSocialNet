@@ -70,7 +70,7 @@ export const actions = {
     deletePost: (postId:number)=>({ type: 'SN/PROFILE/DELETE_POST', postId }as const),
     setStatusAC: (status:string)=>({ type: 'SN/PROFILE/SET_STATUS', status }as const),
     setUserProfile: (profile:ProfileType)=>({ type: 'SN/PROFILE/SET_USER_PROFILE', profile }as const),
-    setProfileData: (formData:any)=>({ type: 'SN/PROFILE/SAVE_USER_PROFILE', formData}as const),
+    setProfileData: (formData:ProfileType)=>({ type: 'SN/PROFILE/SAVE_USER_PROFILE', formData}as const),
     setPhoto: (photos:PhotosType)=>({ type: 'SN/PROFILE/SAVE_USER_PHOTO', photos}as const)
 }
 
