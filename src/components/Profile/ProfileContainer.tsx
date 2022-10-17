@@ -5,18 +5,21 @@ import { setProfile, setStatus, updateStatus, saveProfile } from '../../redux/pr
 import { Navigate, useParams } from 'react-router-dom';
 import {compose} from "redux";
 import { ProfileType } from '../../types/types';
+import { AppStateType } from '../../redux/reduxStore';
+import Preloader from '../common/preloader/preloader';
+
+
 
 type Props = {
-  match: any,
-  authorizedUserId: number,
+  match: any
+}
+type StateToPropsType = ReturnType<typeof mapStateToProps>
+type DispatchPropsType = {
   setProfile: (userId: number)=>void,
   setStatus: (userId: number)=>void,
-  profile: ProfileType,
   updateStatus: (status:string)=>void,
   saveProfile: (formData: any)=>Promise<{}>,
-  status: string
 }
-
 export function withRouter(Children:any){
   return(props:any)=>{
      const match  = {params: useParams()};
@@ -24,7 +27,7 @@ export function withRouter(Children:any){
  }
 }
 
-class ProfileContainer extends React.Component<Props>{
+class ProfileContainer extends React.Component< StateToPropsType & DispatchPropsType & Props>{
   
   refreshProfile(){   
      
@@ -53,17 +56,19 @@ class ProfileContainer extends React.Component<Props>{
     render(){
         if(!this.props.authorizedUserId && !this.props.match.params.userId) 
             return <Navigate to={"/login"}/>;
+        if(this.props.profile)
         return<div>        
           <Profile {...this.props} profile={this.props.profile} 
           updateStatus={this.props.updateStatus} status={this.props.status} isOwner={!this.props.match.params.userId}
           saveProfile={this.props.saveProfile}>
           </Profile>
-        </div>}
+        </div>
+        else return <Preloader/>}
     };
 
 
 
-let mapStateToProps = (state: any)=>({
+let mapStateToProps = (state: AppStateType)=>({
  profile: state.profilePage.profile,
  status: state.profilePage.status,
  authorizedUserId: state.auth.id,

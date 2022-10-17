@@ -5,7 +5,7 @@ import style from './Profile.module.css';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 
 type Props = {
-  profile: ProfileType, 
+  profile: ProfileType , 
   status: string, 
   isOwner: boolean, 
   updateStatus: (status:string)=>void,
