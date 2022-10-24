@@ -18,7 +18,7 @@ type DispatchPropsType = {
   setProfile: (userId: number)=>void,
   setStatus: (userId: number)=>void,
   updateStatus: (status:string)=>void,
-  saveProfile: (formData: any)=>Promise<{}>,
+  saveProfile: (formData: ProfileType)=>Promise<{}>,
 }
 export function withRouter(Children:any){
   return(props:any)=>{

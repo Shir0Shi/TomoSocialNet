@@ -6,7 +6,7 @@ import { PhotosType, UserType } from "../types/types";
 import { objectSelectionChanges } from "../utils/helper";
 import { AppStateType, BaseThunkType, InferActionsType } from "./reduxStore";
 
-let initialState = {
+const InitialState = {
     users:[] as Array<UserType>,
     pageSize: 10,
     totalUsersCount: 0,
@@ -16,7 +16,7 @@ let initialState = {
 };
 
 
-const usersReducer = (state = initialState, action: ActionTypes):InitialStateType =>{
+const usersReducer = (state = InitialState, action: ActionTypes):InitialStateType =>{
     switch(action.type){
         case 'SN/USERS/FOLLOW':{
             return{
@@ -102,7 +102,7 @@ export const unfollow =(userId:number): ThunkType=> async (dispatch) => {
         followUnfollowFlow(dispatch, userId, usersAPI.unFollow.bind(usersAPI),actions.unfollowSuccess);
 }
 
-type InitialStateType = typeof initialState;
+export type InitialStateType = typeof InitialState;
 type ActionTypes = InferActionsType<typeof actions>
 type ThunkType = BaseThunkType<ActionTypes>;
 //type ThunkType = ThunkAction<Promise<void>, AppStateType, unknown, ActionTypes>;

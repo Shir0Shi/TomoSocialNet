@@ -23,7 +23,7 @@ const ProfileInfo : React.FC<Props> = (props)=>{
   if(!props.profile){
     return <Preloader></Preloader>
   }
-  let onSubmit = (formData: any)=>{
+  let onSubmit = (formData: ProfileType)=>{
     props.saveProfile({...formData, fullName: props.profile.fullName}).then((result)=>{
       if(!result)
       setEditMode(false);

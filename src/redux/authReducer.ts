@@ -89,7 +89,7 @@ type FormDataType = {
     email: string,
     password: string,
     rememberMe: boolean,
-    captcha: any
+    captcha: string | null
 }
 
 export default authReducer;
