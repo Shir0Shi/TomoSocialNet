@@ -3,6 +3,7 @@ import style from "./Users.module.css"
 import User from "./User";
 import { UserType } from "../../types/types";
 import { Pagination } from "../common/Paginator/pagination2";
+import { UserSearchForm } from "./UserSearchForm";
 
 
 type Props = {
@@ -18,7 +19,7 @@ type Props = {
 
 let Users: React.FC<Props> = ({totalUsersCount, pageSize, currentPage, onPageChanged, ...props})=>{    
 return(<div className={style.users}>     
-    
+    <UserSearchForm/>
     {
     props.users.map(u=><User key={u.id} user = {u} followingInProgress={props.followingInProgress} 
                             unfollow={props.unfollow} follow={props.follow} />)
@@ -27,4 +28,5 @@ return(<div className={style.users}>
                 pageSize={pageSize} onPageChanged = {onPageChanged}/>                        
         </div>);
 }
+
 export default Users;

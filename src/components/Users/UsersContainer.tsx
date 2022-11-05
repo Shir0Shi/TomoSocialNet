@@ -17,7 +17,7 @@ type MapStatePropsType = {
     followingInProgress: Array<number>
 }
 type MapDispatchPropsType = {
-    requestUsers: (currentPage: number, pageSize: number) => void, 
+    requestUsers: (currentPage: number, pageSize: number, term: string) => void, 
     unfollow: (userId:number)=>void,
     follow:  (userId:number)=>void  
 }
@@ -31,11 +31,11 @@ class UsersAPI extends React.Component<Props>
 {
     componentDidMount(){
         const {currentPage, pageSize} = this.props;
-        this.props.requestUsers(currentPage, pageSize);
+        this.props.requestUsers(currentPage, pageSize, "");
     }
     onPageChanged = (p:number) =>{
         const {pageSize} = this.props;
-         this.props.requestUsers(p, pageSize);
+         this.props.requestUsers(p, pageSize, "");
     }
     render(){
         
