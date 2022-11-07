@@ -27,7 +27,8 @@ beforeEach(()=>{
     isFetching: false,
     followingInProgress: [],
     filter: {
-      term: ""
+      term: "",
+      friend: null
   }
   }
 })

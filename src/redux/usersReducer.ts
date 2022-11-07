@@ -14,7 +14,8 @@ const InitialState = {
     isFetching: false,
     followingInProgress: [] as Array<number>, // array of users id
     filter: {
-        term: ""
+        term: '',
+        friend: null as null | boolean
     }
 };
 
@@ -67,7 +68,7 @@ export const actions = {
     
     setUsers:(users:Array<UserType>) =>({ type:'SN/USERS/SET_USERS', users }as const),
 
-    setFilter:(term: string) =>({ type:'SN/USERS/SET_FILTER', payload: {term} }as const),
+    setFilter:(filter: FilterType) =>({ type:'SN/USERS/SET_FILTER', payload: filter }as const),
     
     setCurrentPage: (currentPage:number) =>({type: 'SN/USERS/SET_CURRENT_PAGE', currentPage}as const),
     
@@ -81,14 +82,15 @@ export const actions = {
 }
 
 
-export const requestUsers =(currentPage:number,pageSize:number, term: string): ThunkType => async (dispatch, getState) => {
-    dispatch(actions.setIsFetching(true));        
-    let result = await usersAPI.getUsers(currentPage, pageSize)
-        dispatch(actions.setFilter(term))
-        dispatch(actions.setUsers(result.items));
-        dispatch(actions.setIsFetching(false));
-        dispatch(actions.setTotalUsersCount(result.totalCount));
-        dispatch(actions.setCurrentPage(currentPage));
+export const requestUsers =(currentPage:number,pageSize:number, filter: FilterType): ThunkType => async (dispatch, getState) => {
+    dispatch(actions.setIsFetching(true)); 
+        
+    dispatch(actions.setFilter(filter))
+    let result = await usersAPI.getUsers(currentPage, pageSize, filter)   
+    dispatch(actions.setUsers(result.items));
+    dispatch(actions.setIsFetching(false));
+    dispatch(actions.setTotalUsersCount(result.totalCount));
+    dispatch(actions.setCurrentPage(currentPage));
 }
 
 const followUnfollowFlow = async(
@@ -114,6 +116,7 @@ export const unfollow =(userId:number): ThunkType=> async (dispatch) => {
 }
 
 export type InitialStateType = typeof InitialState;
+export type FilterType = typeof InitialState.filter;
 type ActionTypes = InferActionsType<typeof actions>
 type ThunkType = BaseThunkType<ActionTypes>;
 //type ThunkType = ThunkAction<Promise<void>, AppStateType, unknown, ActionTypes>;
